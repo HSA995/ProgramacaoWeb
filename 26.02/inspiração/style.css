@@ -1,0 +1,125 @@
+:root {
+    --cor-fundo: #F3EBFF;
+    --cor-primaria: #D6002B;
+    --cor-secundaria: #c9917c;
+    --cor-texto: #1f1a19;
+    --cor-botao: #D6002B;
+    --cor-botao-hover: #D6002B;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--cor-fundo);
+    color: var(--cor-texto);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  header {
+    background: var(--cor-primaria);
+    color: var(--cor-texto);
+    text-align: center;
+    padding: 2rem 1rem 1rem 1rem;
+    border-bottom: 4px solid var(--cor-secundaria);
+  }
+  
+  header .logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 60%;
+    border: 3px solid var(--cor-secundaria);
+    margin-bottom: 1rem;
+    object-fit: cover;
+  }
+  
+  header h1 {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+  }
+  
+  header p {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+  }
+  
+  main {
+    flex: 1;
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .imagem-central {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .imagem-central img {
+    width: 100%;
+    max-width: 350px;
+  }
+  
+  section h2 {
+    color: var(--cor-secundaria);
+    margin-bottom: 0.5rem;
+  }
+  
+  .conteudo {
+    background: #D6002B;
+    padding: 2.5rem;
+  }
+
+  .conteudo hr {
+
+    border-top:  solid #D6002B;
+    
+  }
+  
+
+  .compartilhar {
+    text-align: center;
+  }
+  
+  .botoes {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+  
+  .botoes a {
+    background: var(--cor-botao);
+    color: var(--cor-texto);
+    padding: 0.6rem 1.2rem;
+    border-radius: 2rem;
+    font-weight: bold;
+  }
+  
+  .botoes a:hover {
+    background: var(--cor-botao-hover);
+  }
+  
+
+  
+  @media (max-width: 600px) {
+    header h1 {
+      font-size: 2rem;
+    }
+    main {
+      margin: 1rem 0;
+      padding: 0 0.5rem;
+    }
+    .imagem-central img {
+      max-width: 95vw;
+    }
+  }
