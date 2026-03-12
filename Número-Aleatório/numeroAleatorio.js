@@ -6,18 +6,22 @@ while (chute != numeroSecreto) {
 
     chute = prompt('Escolha um número de 1 a 20:');
 
-    if (chute == numeroSecreto) {
+    if (chute < numeroSecreto) {
 
-        console.log('Parabéns! Acertou o número secreto!');
+        alert('O número secreto é maior!')
+        console.log('O número secreto é maior!')
 
     } else if (chute > numeroSecreto) {
 
+        alert1('O número secreto é menor!');
         console.log('O número secreto é menor!');
 
-    } else if (chute < numeroSecreto) {
-
-        console.log('O número secreto é maior!');
+    } else  {
+        alert(`Parabéns! Acertou o número secreto! ${numeroSecreto}`);
+        console.log(`Parabéns! Acertou o número secreto! ${numeroSecreto}`);
+       break;
     }
+    
 }
 
 function geradorDeNumeroAleatorio(){
