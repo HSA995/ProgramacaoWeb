@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM: Página Interativa com JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>DOM: Página Interativa com JavaScript</h1>
+
+    <!-- CONTADOR -->
+    <button id="btnMais">Incrementar</button>
+    <button id="btnMenos">Decrementar</button>
+    <p>Contador: <span id="contador">0</span></p>
+
+    <!-- INPUT -->
+    <input type="text" id="inputTexto" placeholder="Digite algo...">
+    <p><span id="charCount">0</span> caracteres</p>
+
+    <div id="paragrafos"></div>
+
+    <!-- LISTA -->
+    <p>
+        Escolha o tipo de lista:
+        <select id="tipoLista">
+            <option value="ul">Lista Não Ordenada</option>
+            <option value="ol">Lista Ordenada</option>
+        </select>
+        <button id="btnLista">Adicionar Lista</button>
+    </p>
+
+    <div id="listas"></div>
+
+    <!-- RESET -->
+    <button id="reset">Resetar Tudo</button>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+button {
+    margin: 5px;
+}
+
+input {
+    margin-top: 15px;
+    padding: 5px;
+}
+
+#paragrafos p {
+    margin: 5px 0;
+}
