@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #12263a; /* Verde bem escuro */
+    color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #1a3322;
+    border: 2px solid #2e5939;
+    border-radius: 10px;
+    padding: 30px;
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.tela {
+    display: none;
+}
+
+.tela.ativa {
+    display: block;
+}
+
+h1, h2 {
+    color: #e6b800; /* Amarelo Breaking Bad */
+    margin-bottom: 20px;
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #e6b800;
+    color: #0d1a11;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    width: 100%;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #ccad00;
+}
+
+#opcoes-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.opcao-btn {
+    background-color: #2e5939;
+    color: white;
+}
+
+.opcao-btn:hover {
+    background-color: #3b7349;
+}
+
+#status-pergunta {
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 10px;
+}
+
+#img-personagem {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #e6b800;
+    margin: 15px 0;
+}
+
+.pontuacao {
+    font-weight: bold;
+    color: #4CAF50;
+}
