@@ -1,11 +1,11 @@
-// Classes (Orientação a Objetos)
+
 
 class Personagem {
     constructor(nome, descricao, imagem) {
         this.nome = nome;
         this.descricao = descricao;
         this.imagem = imagem;
-        this.pontuacao = 0; // Estado inicial
+        this.pontuacao = 0; 
     }
 
     adicionarPontos(pontos) {
@@ -20,21 +20,21 @@ class Personagem {
 class Pergunta {
     constructor(texto, opcoes) {
         this.texto = texto;
-        // Opções é uma lista de objetos: { texto: "...", pontos: [ptsA, ptsB, ptsC] }
+        
         this.opcoes = opcoes; 
     }
 }
 
 class JogoQuiz {
     constructor() {
-        // Inicializando os personagens
+        
         this.personagens = [
             new Personagem("Walter White", "Você é calculista, brilhante e extremamente ambicioso. Costuma justificar suas ações moralmente questionáveis pelo bem da 'família', mas no fundo, você gosta do poder.", "assets/walter_white.jpg"),
             new Personagem("Jesse Pinkman", "Você age muito pela emoção e possui um forte senso de lealdade e justiça no fundo. Pode parecer caótico e imprudente, mas tem um coração bom.", "assets/jesse_pinkman.jpg"),
             new Personagem("Saul Goodman", "Você é astuto, falante e sabe exatamente como contornar as regras. Seu talento para a negociação tira você (e os outros) das piores enrascadas.", "assets/saul_goodman.jpg")
         ];
 
-        // Mapeamento dos pontos: [Pontos Walter, Pontos Jesse, Pontos Saul]
+        
         this.perguntas = [
             new Pergunta("Você descobre que tem pouco tempo de vida. O que você faz?", [
                 { texto: "Elaboro um plano arriscado para deixar minha família rica.", pontos: [3, 1, 2] },
@@ -90,7 +90,7 @@ class JogoQuiz {
 
         this.perguntaAtual = 0;
 
-        // Recuperando elementos do DOM
+        
         this.telas = {
             inicio: document.getElementById("tela-inicio"),
             quiz: document.getElementById("tela-quiz"),
@@ -106,13 +106,13 @@ class JogoQuiz {
     }
 
     configurarBotoes() {
-        // Uso de arrow function para não perder o escopo do 'this'
+        
         document.getElementById("btn-iniciar").addEventListener("click", () => this.iniciar());
         document.getElementById("btn-reiniciar").addEventListener("click", () => this.reiniciar());
     }
 
     trocarTela(telaDestino) {
-        // Laço de repetição (for...in) para ocultar todas as telas e mostrar a desejada
+        
         for (let key in this.telas) {
             this.telas[key].classList.remove("ativa");
         }
@@ -131,10 +131,8 @@ class JogoQuiz {
         this.elementosDOM.statusPergunta.innerText = `Pergunta ${this.perguntaAtual + 1} de ${this.perguntas.length}`;
         this.elementosDOM.textoPergunta.innerText = perguntaObj.texto;
         
-        // Limpar opções anteriores
         this.elementosDOM.containerOpcoes.innerHTML = "";
 
-        // Gerar os botões dinamicamente
         perguntaObj.opcoes.forEach((opcao) => {
             const btn = document.createElement("button");
             btn.classList.add("opcao-btn");
@@ -145,14 +143,14 @@ class JogoQuiz {
     }
 
     responder(pontosDaOpcao) {
-        // Laço de repetição para distribuir os pontos ocultos aos personagens
+        
         for (let i = 0; i < this.personagens.length; i++) {
             this.personagens[i].adicionarPontos(pontosDaOpcao[i]);
         }
 
         this.perguntaAtual++;
 
-        // Estrutura condicional para verificar fim do jogo
+        
         if (this.perguntaAtual < this.perguntas.length) {
             this.carregarPergunta();
         } else {
@@ -163,7 +161,7 @@ class JogoQuiz {
     finalizarJogo() {
         this.trocarTela(this.telas.resultado);
 
-        // Lógica para achar o personagem vencedor
+        
         let personagemVencedor = this.personagens[0];
         
         for (let i = 1; i < this.personagens.length; i++) {
@@ -172,7 +170,7 @@ class JogoQuiz {
             }
         }
 
-        // Atualizando o DOM com o resultado
+        
         document.getElementById("nome-personagem").innerText = personagemVencedor.nome;
         document.getElementById("img-personagem").src = personagemVencedor.imagem;
         document.getElementById("desc-personagem").innerText = personagemVencedor.descricao;
@@ -184,7 +182,7 @@ class JogoQuiz {
     }
 }
 
-// Inicializando a aplicação quando a página carrega
+
 window.onload = () => {
     new JogoQuiz();
 };
