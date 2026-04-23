@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #12263a; /* Verde bem escuro */
+    background-color: #12263a; 
     color: #f2f2f2;
     display: flex;
     justify-content: center;
@@ -34,7 +34,7 @@ body {
 }
 
 h1, h2 {
-    color: #e6b800; /* Amarelo Breaking Bad */
+    color: #e6b800; 
     margin-bottom: 20px;
 }
 
